@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(https://picsum.photos/1400/660);
+            display: grid;
+            place-items: center;
+        }
+
+        #btn {
+            width: 170px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: blueviolet;
+            font-size: 23px;
+            margin-top: 300px;
+            color: cornsilk;
+            cursor: pointer;
+        }
+
+        #modal_container {
+            width: 500px;
+            height: 200px;
+            border: 2px solid white;
+            border-radius: 20px;
+            background-color: white;
+            position: fixed;
+            margin-top: 200px;
+            text-align: center;
+            visibility: hidden;
+        }
+
+        #modal_btn {
+            width: 160px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: rgb(74, 84, 233);
+            font-size: 20px;
+            color: cornsilk;
+            cursor: pointer;
+        }
+
+        #modal_container.active {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">OPEN MODAL</button>
+    <div id="modal_container">
+
+        <h3>modal content</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur laborum quis voluptas rem natus exercitationem harum accusamus, sint ea odio.</p>
+        <button id="modal_btn">close modal</button>
+
+    </div>
+    <script>
+        let modal_container = document.querySelector("#modal_container");
+        let btn = document.querySelector("#btn");
+        let modal_btn = document.querySelector("#modal_btn");
+
+        btn.addEventListener("click", function () {
+            modal_container.classList.add('active');
+        });
+        modal_btn.addEventListener("click", function () {
+            modal_container.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>
